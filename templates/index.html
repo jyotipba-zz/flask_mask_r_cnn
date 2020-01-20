@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Welcome to pedestrian crossings detection </h2>
+    <h2>Upload image to see if it contains crossings or not</h2>
+    </div>
+      <form action="" method="post" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+
+        {% if form.image.errors%}
+          {% for error in form.image.errors %}
+            <span>{{error}}</span>
+          {%endfor%}
+        {%endif%}
+      {{form.image}}
+        {{form.submit}}
+      </form>
+    </div>
+    {% if  detected != None %}
+
+      <h2> Detection result</h2>
+      {% endif %}
+
+  <img src="data:image/png;charset=utf-8;base64,{{img}}"/>
+  
+  </body>
+</html>
