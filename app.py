@@ -49,12 +49,8 @@ def index():
         img_str = (base64.b64encode(buffered.getvalue())).decode('utf-8')
         return render_template('index.html', form = form, img = img_str )
 
-
-
-    
-
     return render_template('index.html', form = form )
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', 5000, debug=True)
+    app.run(host='0.0.0.0')
